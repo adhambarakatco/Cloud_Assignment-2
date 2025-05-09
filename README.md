@@ -6,6 +6,10 @@ The system architecture enables **asynchronous order processing**, fault toleran
 
 ---
 
+## Note:
+You can read the Event-Driven Order Notification System – Assignment Report.pdf for full descreption 
+Also, you will find screenshots of every step in AWS Assignment 2 Screenshots.pdf
+
 ## 📦 **What the CloudFormation Template Does**
 
 The provided CloudFormation template (`template.yaml`) automatically creates and configures:
