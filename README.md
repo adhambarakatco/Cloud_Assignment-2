@@ -53,6 +53,9 @@ Combined, the visibility timeout and DLQ mechanisms contribute to a more robust,
 
 ##  **How the System Works**
 
+![image](https://github.com/user-attachments/assets/9a482b27-0d10-4c4e-86bb-291141711ae6)
+
+
 1. A message is published to the **SNS topic** (`OrderTopic`).
 2. SNS forwards the message to the **SQS queue** (`OrderQueue-CF`).
 3. The **Lambda function** is automatically triggered by SQS when a new message arrives.
