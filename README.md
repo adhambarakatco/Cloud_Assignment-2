@@ -43,6 +43,13 @@ The provided CloudFormation template (`template.yaml`) automatically creates and
    - Stores order in DynamoDB
 
 ---
+## Understanding Visibility Timeout and Dead Letter Queue (DLQ)
+
+Visibility Timeout is a key configuration in Amazon SQS that ensures message processing happens safely and without duplication. When a message is fetched from the queue by a Lambda function, it becomes temporarily hidden from other consumers for a defined period (commonly 30 seconds). This ensures that only one instance of the function processes the message. If the message is handled successfully and deleted, it will not be processed again. However, if the function fails or times out, the message reappears in the queue once the visibility timeout expires, allowing it to be retried.
+
+Dead Letter Queue (DLQ) is a separate queue used to capture messages that repeatedly fail to process. In this system, if a message cannot be processed successfully after three attempts, it is redirected to the DLQ. This prevents problematic messages from blocking the main queue and allows for easier inspection and troubleshooting of errors.
+
+Combined, the visibility timeout and DLQ mechanisms contribute to a more robust, fault-tolerant, and maintainable processing pipeline by ensuring reliable retries and isolating failed messages for review.
 
 ## 🏗️ **How the System Works**
 
