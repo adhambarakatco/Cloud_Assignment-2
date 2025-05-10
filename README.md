@@ -10,7 +10,7 @@ The system architecture enables **asynchronous order processing**, fault toleran
 You can read the Event-Driven Order Notification System – Assignment Report.pdf for full descreption 
 Also, you will find screenshots of every step in AWS Assignment 2 Screenshots.pdf
 
-## 📦 **What the CloudFormation Template Does**
+##  **What the CloudFormation Template Does**
 
 The provided CloudFormation template (`template.yaml`) automatically creates and configures:
 
@@ -51,7 +51,7 @@ Dead Letter Queue (DLQ) is a separate queue used to capture messages that repeat
 
 Combined, the visibility timeout and DLQ mechanisms contribute to a more robust, fault-tolerant, and maintainable processing pipeline by ensuring reliable retries and isolating failed messages for review.
 
-## 🏗️ **How the System Works**
+##  **How the System Works**
 
 1. A message is published to the **SNS topic** (`OrderTopic`).
 2. SNS forwards the message to the **SQS queue** (`OrderQueue-CF`).
@@ -61,7 +61,7 @@ Combined, the visibility timeout and DLQ mechanisms contribute to a more robust,
 
 ---
 
-## 🚀 **How to Deploy**
+##  **How to Deploy**
 
 1. Go to **AWS Console → CloudFormation → Create Stack**.
 2. Upload `template.yaml` and create the stack.
@@ -70,14 +70,14 @@ Combined, the visibility timeout and DLQ mechanisms contribute to a more robust,
 
 ---
 
-## 📝 **Notes**
+##  **Notes**
 
 - All resources created by this template are named with `-CF` suffix to avoid conflicts.
 - Make sure to delete the stack after use to avoid unnecessary charges.
 
 ---
 
-## ✅ **Outputs**
+##  **Outputs**
 
 After deployment, the stack outputs:
 - DynamoDB table name
@@ -87,7 +87,7 @@ After deployment, the stack outputs:
 
 ---
 
-## 📚 **Description**
+##  **Description**
 
 This project demonstrates a serverless, event-driven architecture for reliable and scalable order processing using AWS managed services.
 
